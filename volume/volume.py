@@ -8,9 +8,9 @@ import numpy as np
 log = logging.getLogger(__name__)
 
 
-def tetrahedral_volume(vertices):
+def _volume_tetrahedral(vertices):
     '''
-    This function takes a list of 3 points in x, y, z space and computes the volume of a tetrahedron.
+    This function takes 3 points in x, y, z space and computes the volume of a tetrahedron.
 
     Args:
         vertices (:obj:`list` of :obj:`list`): List of 3 vertices of a triangles in x, y, z space
@@ -20,12 +20,12 @@ def tetrahedral_volume(vertices):
 
     Examples:
         >>> vertices = [[0,0,1],[0,1,1],[0,1,0]]
-        >>> tetrahedral_volume(vertices)
+        >>> _volume_tetrahedral(vertices)
         0.0
 
         >>> import numpy as np
         >>> vertices = np.array([[ 1,  0,  0], [ 1,  1,  1], [ 1,  0,  1]])
-        >>> tetrahedral_volume(vertices)
+        >>> _volume_tetrahedral(vertices)
         0.16666666666666666
     '''
     assert [len(i) == 3 for i in vertices]  # validate that each point is in x,y,z space
@@ -34,17 +34,17 @@ def tetrahedral_volume(vertices):
     return np.dot(np.cross(a, b), c) / 6
 
 
-def volume_polygon(array):
+def volume_mesh(array):
     '''
-    This function takes a list of 3 points in x, y, z space and computes the volume of a tetrahedron with a 4th point at the origin.
+    This function takes a mesh (list of 3 points in x, y, z space) and computes the total volume of the mesh.
 
     Args:
         array (:obj:`list` of :obj:`list` of :obj:`list`): List of 3 vertices of a triangles in x, y, z space
 
     Returns:
-        float: volume the polygon
+        float: volume the mesh
     '''
-    return sum(tetrahedral_volume(triangle) for triangle in array)
+    return sum(_volume_tetrahedral(triangle) for triangle in array)
 
 
 if __name__ == '__main__':
@@ -54,4 +54,4 @@ if __name__ == '__main__':
                         type=str)
     args = parser.parse_args()
     array = np.load(args.filename)
-    print volume_polygon(array)
+    print volume_mesh(array)

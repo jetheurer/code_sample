@@ -14,20 +14,23 @@ The setup script creates a virtualenv and installs the necessary dependencies.
 bash setup.sh
 ```
 
-# Pull request
-Title: Determine volume of polygon
+# Example Usage
+```
+$ source venv/bin/activate
+$ python volume/volume.py -f tests/examples/shell.npy
+```
+
+# Pull Request
+
+From feature/volume_mesh to develop
+
+Title: FEATURE: volume of polygon from npy file
 * This is a feature to determine the volume of a polygon from a list of faces.
 * Unit test uses 3 example .npy files.
 
 # Testing
 ```
 nosetests -c setup.cfg
-```
-
-# Example Usage
-```
-$ source venv/bin/activate
-$ python volume/volume.py -f tests/examples/shell.npy
 ```
 
 #Linting
