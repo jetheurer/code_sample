@@ -7,9 +7,17 @@ This is a solution to the Xometry Code Challenge
 4. Appropriately document the functions, modules, etc. you write as part of this code challenge.
 5. Develop this code in a git repository.
 
+# Installation
+
+The setup script creates a virtualenv and installs the necessary dependencies.
+```
+bash setup.sh
+```
+
 # Pull request
-* Implemented a function to determine the volume of a polygon
-* Unit test uses 3 example .npy files
+Title: Determine volume of polygon
+* This is a feature to determine the volume of a polygon from a list of faces.
+* Unit test uses 3 example .npy files.
 
 # Testing
 ```
@@ -18,10 +26,25 @@ nosetests -c setup.cfg
 
 # Example Usage
 ```
+$ source venv/bin/activate
 $ python volume/volume.py -f tests/examples/shell.npy
 ```
 
+#Linting
+
+```
+flake8 volume/ tests/
+```
+
+# Documentation
+```
+bash docs.sh
+```
+
 # Contact
+
 Liz Theurer
+
 jetheurer@gmail.com
+
 352-672-0860
