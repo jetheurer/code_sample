@@ -1,5 +1,5 @@
-# Xometry Code Challenge
-This is a solution to the Xometry Code Challenge
+# Code Challenge
+This is a solution to the Code Challenge
 
 1. Write a function that takes a mesh array (described below) and calculates the mesh's volume.
 2. Write a unit test for the volume function in #1.
@@ -43,11 +43,3 @@ flake8 volume/ tests/
 ```
 bash docs.sh
 ```
-
-# Contact
-
-Liz Theurer
-
-jetheurer@gmail.com
-
-352-672-0860
