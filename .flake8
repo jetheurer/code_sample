@@ -2,9 +2,4 @@
 # exclude =
 max-line-length = 120
 
-# Please document any ignores.
-
-# E305: new version of flake8 adds trailing blank lines, nah.
-# E501: line too long -- defer this to avoid merge conflicts
-# The FI* are to enforce from __future__ import division, and we only want a few.
 ignore = E305,E501,FI11,FI12,FI13,FI14,FI15,FI16,FI17,FI50,FI53,FI54
